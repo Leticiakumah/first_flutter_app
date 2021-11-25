@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'fluTter Demo',
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
 }
 
 class LeticiaHomePage extends StatelessWidget {
-  const LeticiaHomePage({ Key? key }) : super(key: key);
+  const LeticiaHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -29,48 +29,56 @@ class LeticiaHomePage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text("Leticia's Application"),
-        actions: const [
-         Icon(Icons.search_off_rounded),
-         Icon(Icons.more_vert) ],
+        actions: const [Icon(Icons.search_off_rounded), Icon(Icons.more_vert)],
       ),
-      body:  ListView(children: [
-        ListTile(leading: CircleAvatar(radius: 30,backgroundImage: AssetImage("assets/images/profile.jpg")
+      body: ListView(
+        children: [
+          ListTile(
+            leading: CircleAvatar(
+                radius: 30,
+                backgroundImage: AssetImage("assets/images/profile.jpg")),
+            title: Text("Leticia"),
+            subtitle: Row(
+              children: const [
+                Icon(Icons.done_all),
+                SizedBox(
+                  width: 10,
+                ),
+                Text("Hi how are you doing")
+              ],
+            ),
+            trailing: Column(
+              children: [Text("3:45"), Icon(Icons.notifications)],
+            ),
+          ),
+          ListTile(
+            leading: CircleAvatar(
+                radius: 30, backgroundImage: AssetImage("images/profile.jpg")),
+            title: Text("Leticia"),
+            subtitle: Row(
+              children: const [
+                Icon(Icons.done_all),
+                SizedBox(
+                  width: 10,
+                ),
+                Text("Hi how are you doing")
+              ],
+            ),
+            trailing: Column(
+              children: [Text("3:45"), Icon(Icons.notifications)],
+            ),
+          )
+        ],
       ),
-      title: Text("Leticia"),
-      subtitle: Row(
-        children: const [Icon(Icons.done_all),
-        SizedBox(
-          width: 10,
-        ),
-         Text("Hi how are you doing")],
-      ),
-      trailing: Column(children: [
-        Text("3:45"),
-        Icon(Icons.notifications)],
-        ),
-      ),
-      ListTile(leading: CircleAvatar(radius: 30,backgroundImage: AssetImage("images/profile.jpg")
-      ),
-      title: Text("Leticia"),
-      subtitle: Row(
-        children: const [Icon(Icons.done_all),
-        SizedBox(
-          width: 10,
-        ),
-         Text("Hi how are you doing")],
-      ),
-      trailing: Column(children: [
-        Text("3:45"),
-        Icon(Icons.notifications)],
-        ),
-      )
-      ],),
       drawer: Drawer(
-        child: ListView(children: [
-          ListTile(leading: Icon(Icons.home),title: Text("data"),)
-        ],)
-      ),
+          child: ListView(
+        children: [
+          ListTile(
+            leading: Icon(Icons.home),
+            title: Text("data"),
+          )
+        ],
+      )),
     );
   }
 }
-
